@@ -6,17 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  text = 'Start with Ionic';
-  prevText: string;
-  yourName;
+  expenses = [];
+  totalExpense = 0;
 
   constructor() { }
 
-  onClick() {
-    const { prevText } = this;
-
-    this.prevText = this.text;
-    this.text = prevText || 'Whatever';
+  addExpense(reason, amount) {
+    amount = parseFloat(amount);
+    console.log({ reason, amount });
+    this.totalExpense += amount;
+    this.expenses.push({ reason, amount });
   }
-
 }
