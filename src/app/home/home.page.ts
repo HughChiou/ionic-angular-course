@@ -7,11 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   text = 'Start with Ionic';
+  prevText: string;
+  yourName;
 
   constructor() { }
 
   onClick() {
-    this.text = 'Whatever';
+    const { prevText } = this;
+
+    this.prevText = this.text;
+    this.text = prevText || 'Whatever';
   }
 
 }
