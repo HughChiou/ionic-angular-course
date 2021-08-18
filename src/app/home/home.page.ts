@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  text = 'Start with Ionic';
 
-  constructor() {}
+  constructor() { }
+
+  onClick() {
+    this.text = 'Whatever';
+  }
 
 }
